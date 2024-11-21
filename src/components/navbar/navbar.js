@@ -6,6 +6,25 @@ function Navbar() {
     const [features_direction,set_features_direction] = useState("down")
     const [company_direction,set_company_direction] = useState("down")
 
+    function handle_img_src(name) {
+        if(name === "features"){
+            if(features_direction == "down"){
+                set_features_direction("up")
+                return
+            }
+            set_features_direction("down")
+            return 
+        }
+        if(name === "company"){
+            if(company_direction == "down"){
+                set_company_direction("up")
+                return
+            }
+            set_company_direction("down")
+            return 
+        }
+    }
+
     return(
         <header>
             <nav className="navbar d-flex flex-row px-2">
@@ -41,7 +60,7 @@ function Navbar() {
                 <nav className="navbar">
                     <ul className="navbar-nav d-flex flex-column ps-3">
                         <li className="nav-item">
-                            <button className="btn btn-link nav-link link-gray" data-bs-toggle="collapse" data-bs-target="#features-collapse">Features<img src={`./images/icon-arrow-${features_direction}${".svg"}`}/></button>
+                            <button className="btn btn-link nav-link link-gray" data-bs-toggle="collapse" data-bs-target="#features-collapse" onClick={() => handle_img_src("features")}>Features<img src={`./images/icon-arrow-${features_direction}${".svg"}`}/></button>
                             <div className="collapse" id="features-collapse">
                                 <ul className="nav d-flex flex-column">
                                     <li className="nav-item">
@@ -60,7 +79,7 @@ function Navbar() {
                             </div>                       
                         </li>
                         <li className="nav-item">
-                            <button className="btn btn-link nav-link link-gray" data-bs-toggle="collapse" data-bs-target="#company-collapse">Company<img src={`./images/icon-arrow-${company_direction}${".svg"}`}/></button>
+                            <button className="btn btn-link nav-link link-gray" data-bs-toggle="collapse" data-bs-target="#company-collapse" onClick={() => handle_img_src("company")}>Company<img src={`./images/icon-arrow-${company_direction}${".svg"}`}/></button>
                             <div className="collapse" id="company-collapse">
                                 <ul className="nav d-flex flex-column">
                                     <li className="nav-item">
