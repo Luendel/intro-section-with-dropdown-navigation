@@ -1,7 +1,11 @@
 import React from "react";
+import { useState } from "react";
 import "./navbar.css"
 
 function Navbar() {
+    const [features_direction,set_features_direction] = useState("down")
+    const [company_direction,set_company_direction] = useState("down")
+
     return(
         <header>
             <nav className="navbar d-flex flex-row px-2">
@@ -35,53 +39,53 @@ function Navbar() {
                 </svg>
                 </div>
                 <nav className="navbar">
-                    <ul className="navbar-nav d-flex flex-column">
+                    <ul className="navbar-nav d-flex flex-column ps-3">
                         <li className="nav-item">
-                            <button className="btn btn-link nav-link" data-bs-toggle="collapse" data-bs-target="#features-collapse">Features</button>
+                            <button className="btn btn-link nav-link link-gray" data-bs-toggle="collapse" data-bs-target="#features-collapse">Features<img src={`./images/icon-arrow-${features_direction}${".svg"}`}/></button>
                             <div className="collapse" id="features-collapse">
                                 <ul className="nav d-flex flex-column">
                                     <li className="nav-item">
-                                        <a className="nav-link" href="#">Todo List</a>
+                                        <a className="nav-link link-gray collapse-link" href="#"><p><img src="./images/icon-todo.svg"/>Todo List</p></a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="#">Calendar</a>
+                                        <a className="nav-link link-gray collapse-link" href="#"><p><img src="./images/icon-calendar.svg"/>Calendar</p></a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="#">Reminders</a>
+                                        <a className="nav-link link-gray collapse-link" href="#"><p><img src="./images/icon-reminders.svg"/>Reminders</p></a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="#">Planning</a>
+                                        <a className="nav-link link-gray collapse-link" href="#"><p><img src="./images/icon-planning.svg"/>Planning</p></a>
                                     </li>
                                 </ul>
                             </div>                       
                         </li>
                         <li className="nav-item">
-                            <button className="btn btn-link nav-link" data-bs-toggle="collapse" data-bs-target="#company-collapse">Company</button>
+                            <button className="btn btn-link nav-link link-gray" data-bs-toggle="collapse" data-bs-target="#company-collapse">Company<img src={`./images/icon-arrow-${company_direction}${".svg"}`}/></button>
                             <div className="collapse" id="company-collapse">
                                 <ul className="nav d-flex flex-column">
                                     <li className="nav-item">
-                                        <a className="nav-link" href="#">History</a>
+                                        <a className="nav-link link-gray collapse-link" href="#">History</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="#">Our Team</a>
+                                        <a className="nav-link link-gray collapse-link" href="#">Our Team</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="#">Blog</a>
+                                        <a className="nav-link link-gray collapse-link" href="#">Blog</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
                         <li className="nav-item">
-                            <button className="btn btn-link nav-link">Careers</button>
+                            <button className="btn btn-link nav-link link-gray">Careers</button>
                         </li>
                         <li className="nav-item">
-                            <button className="btn btn-link nav-link">About</button>
+                            <button className="btn btn-link nav-link link-gray">About</button>
                         </li>
                     </ul>
                 </nav>
 
-                <button className="btn btn-link nav-link text-dark mb-3">Login</button>
-                <button className="btn btn-secondary bg-light text-dark">Register</button>
+                <button className="btn btn-login">Login</button>
+                <button className="btn btn-register">Register</button>
             </div>
         </header>
     )

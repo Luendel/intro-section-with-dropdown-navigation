@@ -1,3 +1,83 @@
 #aside-nav {
-    width: 60%;
+    width: 65%;
+}
+
+.link-gray {
+    color: hsl(0, 0%, 41%);
+    font-weight: 500;
+    font-size: 1rem;
+    margin-left: 0.25rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.link-gray:hover {
+    color: hsl(0, 0%, 8%);
+}
+
+.link-gray img {
+    margin-left: 1rem;
+    height: 100%;
+    filter: invert(100%);
+}
+
+.link-gray:hover img {
+    filter: invert(0%);
+}
+
+.link-gray:focus {
+    color: hsl(0, 0%, 8%);
+    border: none;
+}
+
+.link-gray.collapse-link {
+    margin-left: 1.7rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+}
+
+.link-gray.collapse-link p {
+    margin-left: -1rem;
+}
+
+.link-gray.collapse-link img {
+    width: 1rem;
+    filter: invert(0%);
+    margin-right: 0.5rem;
+    align-self: center;
+    margin-bottom: 0.2rem;
+}
+
+.btn-login {
+    color: hsl(0, 0%, 41%);
+    font-size: 1rem;
+    width: 80%;
+    margin: 0 auto;
+    background-color: hsl(0, 0%, 98%);
+    border: none;
+    padding: 0.65rem 0;
+    border-radius: 1rem;
+}
+
+.btn-login:hover {
+    color: hsl(0, 0%, 8%);
+}
+
+.btn-register {
+    color: hsl(0, 0%, 41%);
+    font-size: 1rem;
+    width: 80%;
+    margin: 0 auto;
+    background-color: hsl(0, 0%, 98%);
+    border: 1px solid hsl(0, 0%, 8%);
+    padding: 0.65rem 0;
+    border-radius: 1rem;
+}
+
+.btn-register:hover {
+    color: hsl(0, 0%, 98%);
+    background-color: hsl(0, 0%, 8%);
 }
