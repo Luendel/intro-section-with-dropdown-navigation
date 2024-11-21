@@ -1,4 +1,5 @@
 import React from "react";
+import "./navbar.css"
 
 function Navbar() {
     return(
@@ -25,7 +26,62 @@ function Navbar() {
             </nav>
 
             <div className="offcanvas offcanvas-end" id="aside-nav" tabIndex={-1}>
-                <div className="container bg-primary"><h3 className="" data-bs-dismiss="offcanvas">Teste</h3></div>
+                <div className="container d-flex flex-row justify-content-end px-3 my-3">
+                <svg width="26" height="26" xmlns="http://www.w3.org/2000/svg" data-bs-dismiss="offcanvas">
+                    <g fill="#151515" fill-rule="evenodd">
+                        <path d="m2.393.98 22.628 22.628-1.414 1.414L.979 2.395z"/>
+                        <path d="M.98 23.607 23.609.979l1.414 1.414L2.395 25.021z"/>
+                    </g>
+                </svg>
+                </div>
+                <nav className="navbar">
+                    <ul className="navbar-nav d-flex flex-column">
+                        <li className="nav-item">
+                            <button className="btn btn-link nav-link" data-bs-toggle="collapse" data-bs-target="#features-collapse">Features</button>
+                            <div className="collapse" id="features-collapse">
+                                <ul className="nav d-flex flex-column">
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="#">Todo List</a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="#">Calendar</a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="#">Reminders</a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="#">Planning</a>
+                                    </li>
+                                </ul>
+                            </div>                       
+                        </li>
+                        <li className="nav-item">
+                            <button className="btn btn-link nav-link" data-bs-toggle="collapse" data-bs-target="#company-collapse">Company</button>
+                            <div className="collapse" id="company-collapse">
+                                <ul className="nav d-flex flex-column">
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="#">History</a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="#">Our Team</a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="#">Blog</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li className="nav-item">
+                            <button className="btn btn-link nav-link">Careers</button>
+                        </li>
+                        <li className="nav-item">
+                            <button className="btn btn-link nav-link">About</button>
+                        </li>
+                    </ul>
+                </nav>
+
+                <button className="btn btn-link nav-link text-dark mb-3">Login</button>
+                <button className="btn btn-secondary bg-light text-dark">Register</button>
             </div>
         </header>
     )
