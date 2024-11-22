@@ -26,7 +26,7 @@ function Navbar() {
     }
 
     return(
-        <header>
+        <header style={{backgroundColor:"hsl(0, 0%, 98%)"}}>
             <nav className="navbar d-flex flex-row px-2">
                 <div>
                     <button className="btn btn-link navbar-brand mx-1" href="#">
@@ -48,9 +48,9 @@ function Navbar() {
                 </ul>
             </nav>
 
-            <div className="offcanvas offcanvas-end" id="aside-nav" tabIndex={-1}>
+            <div className="offcanvas offcanvas-end" id="aside-nav" tabIndex={-1} style={{backgroundColor:"hsl(0, 0%, 98%)"}}>
                 <div className="container d-flex flex-row justify-content-end px-3 my-3">
-                <svg width="26" height="26" xmlns="http://www.w3.org/2000/svg" data-bs-dismiss="offcanvas">
+                <svg width="26" height="26" xmlns="http://www.w3.org/2000/svg" data-bs-dismiss="offcanvas" id="btn-close">
                     <g fill="#151515" fill-rule="evenodd">
                         <path d="m2.393.98 22.628 22.628-1.414 1.414L.979 2.395z"/>
                         <path d="M.98 23.607 23.609.979l1.414 1.414L2.395 25.021z"/>

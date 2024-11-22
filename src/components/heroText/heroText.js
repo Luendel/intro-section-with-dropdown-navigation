@@ -3,7 +3,7 @@ import  './heroText.css'
 
 function HeroText() {
     return(
-        <section className="container-fluid text-center">
+        <section className="container-fluid text-center" style={{backgroundColor:"hsl(0, 0%, 98%)"}}>
             <h1 id="section-title" >Make remote work</h1>
             <p className="mt-3" id="section-description">
                 Get your team in sync, no matter your location. 
