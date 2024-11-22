@@ -46,7 +46,7 @@ function Navbar() {
                         </button>
                     </li>
                     {/* navbar for large screens */}
-                    <li className="nav-item d-sm-none d-lg-block">
+                    <li className="nav-item d-none d-lg-block">
                             <button className="btn btn-link nav-link link-gray" data-bs-toggle="collapse" data-bs-target="#features-collapse" onClick={() => handle_img_src("features")}>Features<img src={`./images/icon-arrow-${features_direction}${".svg"}`}/></button>
                             <div className="collapse" id="features-collapse">
                                 <ul className="nav d-flex flex-column">
@@ -65,7 +65,7 @@ function Navbar() {
                                 </ul>
                             </div>                       
                     </li>
-                    <li className="nav-item d-sm-none d-lg-block">
+                    <li className="nav-item d-none d-lg-block">
                         <button className="btn btn-link nav-link link-gray" data-bs-toggle="collapse" data-bs-target="#company-collapse" onClick={() => handle_img_src("company")}>Company<img src={`./images/icon-arrow-${company_direction}${".svg"}`}/></button>
                             <div className="collapse" id="company-collapse">
                                 <ul className="nav d-flex flex-column">
@@ -81,14 +81,14 @@ function Navbar() {
                                 </ul>
                             </div>
                     </li>
-                    <li className="nav-item d-sm-none d-lg-block">
+                    <li className="nav-item d-none d-lg-block">
                         <button className="btn btn-link nav-link link-gray">Careers</button>
                     </li>
-                    <li className="nav-item d-sm-none d-lg-block">
+                    <li className="nav-item d-none d-lg-block">
                         <button className="btn btn-link nav-link link-gray">About</button>
                     </li>
                 </ul>
-                <ul className="nav d-sm-none d-lg-flex flex-row justiy-content-space-between align-items-center" id="button-list">
+                <ul className="nav d-none d-lg-flex flex-row justiy-content-space-between align-items-center" id="button-list">
                     <li className="nav-item">
                         <button className="btn btn-login">Login</button>
                     </li>
