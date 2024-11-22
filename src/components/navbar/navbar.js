@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import "./navbar.css"
 
@@ -9,6 +9,9 @@ function Navbar() {
     function handle_img_src(name) {
         if(name === "features"){
             if(features_direction == "down"){
+                if(company_direction === "up"){
+                    set_company_direction("down")
+                }
                 set_features_direction("up")
                 return
             }
@@ -17,13 +20,42 @@ function Navbar() {
         }
         if(name === "company"){
             if(company_direction == "down"){
+                if(features_direction === "up"){
+                    set_features_direction("down")
+                }
                 set_company_direction("up")
                 return
             }
             set_company_direction("down")
             return 
         }
+
+        if(name === "reset"){
+            set_company_direction("down")
+            set_features_direction("down")
+        }
     }
+
+
+    useEffect(()=> {
+        window.addEventListener("click", (event) => {
+            if(event.target.id){
+                if(event.target.id === "featuresDropdown" || event.target.id === "companyDropdown"){
+                    return
+                }
+                handle_img_src("reset")
+            }
+
+            if(event.target.getAttribute){
+                let name = event.target.getAttribute("name")
+
+                if(name === "no-resetable"){
+                    return
+                }
+            }
+            handle_img_src("reset")
+        })
+    },[])
 
     return(
         <header style={{backgroundColor:"hsl(0, 0%, 98%)"}}>
@@ -46,40 +78,64 @@ function Navbar() {
                         </button>
                     </li>
                     {/* navbar for large screens */}
-                    <li className="nav-item d-none d-lg-block">
-                            <button className="btn btn-link nav-link link-gray" data-bs-toggle="collapse" data-bs-target="#features-collapse" onClick={() => handle_img_src("features")}>Features<img src={`./images/icon-arrow-${features_direction}${".svg"}`}/></button>
-                            <div className="collapse" id="features-collapse">
-                                <ul className="nav d-flex flex-column">
-                                    <li className="nav-item">
-                                        <a className="nav-link link-gray collapse-link" href="#"><p><img src="./images/icon-todo.svg"/>Todo List</p></a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link link-gray collapse-link" href="#"><p><img src="./images/icon-calendar.svg"/>Calendar</p></a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link link-gray collapse-link" href="#"><p><img src="./images/icon-reminders.svg"/>Reminders</p></a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link link-gray collapse-link" href="#"><p><img src="./images/icon-planning.svg"/>Planning</p></a>
-                                    </li>
-                                </ul>
-                            </div>                       
+                    <li className="nav-item dropdown d-none d-lg-block">
+                        <button
+                            className="btn btn-link nav-link link-gray"
+                            type="button"
+                            id="featuresDropdown"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                            onClick={() => handle_img_src("features")}
+                        >
+                            Features
+                            <img src={`./images/icon-arrow-${features_direction}.svg`} alt="arrow"/>
+                        </button>
+                        <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="featuresDropdown" data-bs-popper="true" name="no-resetable">
+                            <li name="no-resetable">
+                                <a className="dropdown-item link-gray collapse-link" href="#" onClick={() => handle_img_src("features")} name="no-resetable">
+                                    <img src="./images/icon-todo.svg" alt="Todo List" name="no-resetable"/> Todo List
+                                </a>
+                            </li>
+                            <li name="no-resetable">
+                                <a className="dropdown-item link-gray collapse-link" href="#" onClick={() => handle_img_src("features")} name="no-resetable">
+                                    <img src="./images/icon-calendar.svg" alt="Calendar" name="no-resetable"/> Calendar
+                                </a>
+                            </li>
+                            <li name="no-resetable">
+                                <a className="dropdown-item link-gray collapse-link" href="#" onClick={() => handle_img_src("features")} name="no-resetable">
+                                    <img src="./images/icon-reminders.svg" alt="Reminders" name="no-resetable"/> Reminders
+                                </a>
+                            </li>
+                            <li name="no-resetable">
+                                <a className="dropdown-item link-gray collapse-link" href="#" onClick={() => handle_img_src("features")} name="no-resetable">
+                                    <img src="./images/icon-planning.svg" alt="Planning" name="no-resetable"/> Planning
+                                </a>
+                            </li>
+                        </ul>
                     </li>
-                    <li className="nav-item d-none d-lg-block">
-                        <button className="btn btn-link nav-link link-gray" data-bs-toggle="collapse" data-bs-target="#company-collapse" onClick={() => handle_img_src("company")}>Company<img src={`./images/icon-arrow-${company_direction}${".svg"}`}/></button>
-                            <div className="collapse" id="company-collapse">
-                                <ul className="nav d-flex flex-column">
-                                    <li className="nav-item">
-                                        <a className="nav-link link-gray collapse-link" href="#">History</a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link link-gray collapse-link" href="#">Our Team</a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link link-gray collapse-link" href="#">Blog</a>
-                                    </li>
-                                </ul>
-                            </div>
+                    <li className="nav-item dropdown d-none d-lg-block">
+                        <button 
+                            className="btn btn-link nav-link link-gray"
+                            type="button"
+                            id="companyDropdown" 
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false" 
+                            onClick={() => handle_img_src("company")}
+                        >
+                            Company
+                            <img src={`./images/icon-arrow-${company_direction}${".svg"}`}/>
+                        </button>
+                            <ul className="dropdown-menu" aria-labelledby="companyDropdown" data-bs-popper="true">
+                                <li>
+                                    <a className="dropdown-item link-gray collapse-link" onClick={() => handle_img_src("company")} href="#">History</a>
+                                </li>
+                                <li>
+                                    <a className="dropdown-item link-gray collapse-link" onClick={() => handle_img_src("company")} href="#">Our Team</a>
+                                </li>
+                                <li>
+                                    <a className="dropdown-item link-gray collapse-link" onClick={() => handle_img_src("company")} href="#">Blog</a>
+                                </li>
+                            </ul>
                     </li>
                     <li className="nav-item d-none d-lg-block">
                         <button className="btn btn-link nav-link link-gray">Careers</button>
