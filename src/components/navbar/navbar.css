@@ -85,3 +85,36 @@
 #btn-close:hover {
     cursor: pointer;
 }
+
+
+@media (min-width:768px) {
+    svg {
+        scale: 1.3;
+    }
+}
+
+@media (min-width:992px) {
+
+    header {
+        grid-column: span 2;
+    }
+
+    .link-gray {
+        margin-right: 2rem;
+    }
+
+    #button-list {
+        position: absolute;
+        right: 2vw;
+    }
+
+    .btn-login {
+        margin: auto auto;
+        width: 10vw;
+    }
+
+    .btn-register {
+        margin: auto auto;
+        width: 10vw;
+    }
+}

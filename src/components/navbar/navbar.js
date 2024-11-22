@@ -27,7 +27,7 @@ function Navbar() {
 
     return(
         <header style={{backgroundColor:"hsl(0, 0%, 98%)"}}>
-            <nav className="navbar d-flex flex-row px-2">
+            <nav className="navbar d-flex flex-row px-2 ps-lg-4 align-items-lg-center justify-content-lg-start">
                 <div>
                     <button className="btn btn-link navbar-brand mx-1" href="#">
                         <svg width="84" height="27" xmlns="http://www.w3.org/2000/svg">
@@ -35,8 +35,8 @@ function Navbar() {
                         </svg>
                     </button>
                 </div>
-                <ul className="navbar-nav">
-                    <li className="nav-item mx-2">
+                <ul className="navbar-nav d-flex flex-row px-lg-4 mx-lg-4">
+                    <li className="nav-item mx-2 d-block d-lg-none">
                         <button className="btn btn-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#aside-nav">
                         <svg width="32" height="18" xmlns="http://www.w3.org/2000/svg">
                             <g fill="#151515" fillRule="evenodd">
@@ -45,8 +45,60 @@ function Navbar() {
                         </svg>
                         </button>
                     </li>
+                    {/* navbar for large screens */}
+                    <li className="nav-item d-sm-none d-lg-block">
+                            <button className="btn btn-link nav-link link-gray" data-bs-toggle="collapse" data-bs-target="#features-collapse" onClick={() => handle_img_src("features")}>Features<img src={`./images/icon-arrow-${features_direction}${".svg"}`}/></button>
+                            <div className="collapse" id="features-collapse">
+                                <ul className="nav d-flex flex-column">
+                                    <li className="nav-item">
+                                        <a className="nav-link link-gray collapse-link" href="#"><p><img src="./images/icon-todo.svg"/>Todo List</p></a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link link-gray collapse-link" href="#"><p><img src="./images/icon-calendar.svg"/>Calendar</p></a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link link-gray collapse-link" href="#"><p><img src="./images/icon-reminders.svg"/>Reminders</p></a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link link-gray collapse-link" href="#"><p><img src="./images/icon-planning.svg"/>Planning</p></a>
+                                    </li>
+                                </ul>
+                            </div>                       
+                    </li>
+                    <li className="nav-item d-sm-none d-lg-block">
+                        <button className="btn btn-link nav-link link-gray" data-bs-toggle="collapse" data-bs-target="#company-collapse" onClick={() => handle_img_src("company")}>Company<img src={`./images/icon-arrow-${company_direction}${".svg"}`}/></button>
+                            <div className="collapse" id="company-collapse">
+                                <ul className="nav d-flex flex-column">
+                                    <li className="nav-item">
+                                        <a className="nav-link link-gray collapse-link" href="#">History</a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link link-gray collapse-link" href="#">Our Team</a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link link-gray collapse-link" href="#">Blog</a>
+                                    </li>
+                                </ul>
+                            </div>
+                    </li>
+                    <li className="nav-item d-sm-none d-lg-block">
+                        <button className="btn btn-link nav-link link-gray">Careers</button>
+                    </li>
+                    <li className="nav-item d-sm-none d-lg-block">
+                        <button className="btn btn-link nav-link link-gray">About</button>
+                    </li>
                 </ul>
+                <ul className="nav d-sm-none d-lg-flex flex-row justiy-content-space-between align-items-center" id="button-list">
+                    <li className="nav-item">
+                        <button className="btn btn-login">Login</button>
+                    </li>
+                    <li className="nav-item">
+                        <button className="btn btn-register">Register</button>
+                    </li>
+                </ul>
+                
             </nav>
+            
 
             <div className="offcanvas offcanvas-end" id="aside-nav" tabIndex={-1} style={{backgroundColor:"hsl(0, 0%, 98%)"}}>
                 <div className="container d-flex flex-row justify-content-end px-3 my-3">
