@@ -55,7 +55,7 @@ function Navbar() {
             }
             handle_img_src("reset")
         })
-    },[])
+    },[handle_img_src])
 
     /* eslint-disable jsx-a11y/anchor-is-valid */
     return(
