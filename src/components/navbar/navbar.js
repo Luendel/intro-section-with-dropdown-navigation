@@ -8,7 +8,7 @@ function Navbar() {
 
     function handle_img_src(name) {
         if(name === "features"){
-            if(features_direction == "down"){
+            if(features_direction === "down"){
                 if(company_direction === "up"){
                     set_company_direction("down")
                 }
@@ -19,7 +19,7 @@ function Navbar() {
             return 
         }
         if(name === "company"){
-            if(company_direction == "down"){
+            if(company_direction === "down"){
                 if(features_direction === "up"){
                     set_features_direction("down")
                 }
