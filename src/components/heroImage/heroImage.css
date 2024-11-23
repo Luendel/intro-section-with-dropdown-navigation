@@ -1,0 +1,15 @@
+#heroImage-div {
+    padding: 0;
+}
+
+@media (min-width:1200px) {
+    #heroImage-div{
+        display: flex;
+        justify-content: center;
+        padding-top: 1.75rem;
+    }
+    img {
+        max-width: 31vw;
+        max-height: 39.5vw;
+    }
+}

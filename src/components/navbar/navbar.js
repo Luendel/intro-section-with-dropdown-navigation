@@ -88,7 +88,7 @@ function Navbar() {
                             onClick={() => handle_img_src("features")}
                         >
                             Features
-                            <img src={`./images/icon-arrow-${features_direction}.svg`} alt="arrow"/>
+                            <img src={`./images/icon-arrow-${features_direction}.svg`} alt={`arrow-${features_direction}`} name="no-resetable"/>
                         </button>
                         <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="featuresDropdown" data-bs-popper="true" name="no-resetable">
                             <li name="no-resetable">
@@ -123,7 +123,7 @@ function Navbar() {
                             onClick={() => handle_img_src("company")}
                         >
                             Company
-                            <img src={`./images/icon-arrow-${company_direction}${".svg"}`}/>
+                            <img src={`./images/icon-arrow-${company_direction}${".svg"}`} alt={`arrow-${company_direction}`} name="no-resetable"/>
                         </button>
                             <ul className="dropdown-menu" aria-labelledby="companyDropdown" data-bs-popper="true">
                                 <li>
