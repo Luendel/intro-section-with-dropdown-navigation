@@ -143,13 +143,21 @@
 
     ul.dropdown-menu.dropdown-menu-end.show {
         left: -42%;
+        font-family:"Epilogue", sans-serif;
     }
 
     .link-gray.collapse-link {
         margin-left: 0rem;
+        font-size: 0.9rem;
+        padding-top: 0.5rem;
+        padding-bottom:0.5rem
     }
 
     .link-gray.link-gray.collapse-link img {
         margin-left: 0.6rem;
+    }
+
+    .second-menu {
+        padding-left: 2.5rem;
     }
 }

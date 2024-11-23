@@ -127,13 +127,13 @@ function Navbar() {
                         </button>
                             <ul className="dropdown-menu" aria-labelledby="companyDropdown" data-bs-popper="true">
                                 <li>
-                                    <a className="dropdown-item link-gray collapse-link" onClick={() => handle_img_src("company")} href="#">History</a>
+                                    <a className="dropdown-item link-gray collapse-link second-menu" onClick={() => handle_img_src("company")} href="#">History</a>
                                 </li>
                                 <li>
-                                    <a className="dropdown-item link-gray collapse-link" onClick={() => handle_img_src("company")} href="#">Our Team</a>
+                                    <a className="dropdown-item link-gray collapse-link second-menu" onClick={() => handle_img_src("company")} href="#">Our Team</a>
                                 </li>
                                 <li>
-                                    <a className="dropdown-item link-gray collapse-link" onClick={() => handle_img_src("company")} href="#">Blog</a>
+                                    <a className="dropdown-item link-gray collapse-link second-menu" onClick={() => handle_img_src("company")} href="#">Blog</a>
                                 </li>
                             </ul>
                     </li>
