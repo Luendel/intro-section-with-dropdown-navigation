@@ -36,7 +36,7 @@ function Navbar() {
         }
     }
 
-
+/* eslint-disable-next-line react-hooks/exhaustive-deps */
     useEffect(()=> {
         window.addEventListener("click", (event) => {
             if(event.target.id){
@@ -57,6 +57,7 @@ function Navbar() {
         })
     },[])
 
+    /* eslint-disable jsx-a11y/anchor-is-valid */
     return(
         <header style={{backgroundColor:"hsl(0, 0%, 98%)"}}>
             <nav className="navbar d-flex flex-row px-2 ps-lg-4 align-items-lg-center justify-content-lg-start">
@@ -168,26 +169,26 @@ function Navbar() {
                 <nav className="navbar">
                     <ul className="navbar-nav d-flex flex-column ps-3">
                         <li className="nav-item">
-                            <button className="btn btn-link nav-link link-gray" data-bs-toggle="collapse" data-bs-target="#features-collapse" onClick={() => handle_img_src("features")}>Features<img src={`./images/icon-arrow-${features_direction}${".svg"}`}/></button>
+                            <button className="btn btn-link nav-link link-gray" data-bs-toggle="collapse" data-bs-target="#features-collapse" onClick={() => handle_img_src("features")}>Features<img src={`./images/icon-arrow-${features_direction}${".svg"}`} alt={`arrow-${features_direction}`}/></button>
                             <div className="collapse" id="features-collapse">
                                 <ul className="nav d-flex flex-column">
                                     <li className="nav-item">
-                                        <a className="nav-link link-gray collapse-link" href="#"><p><img src="./images/icon-todo.svg"/>Todo List</p></a>
+                                        <a className="nav-link link-gray collapse-link" href="#"><p><img src="./images/icon-todo.svg" alt="todo"/>Todo List</p></a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link link-gray collapse-link" href="#"><p><img src="./images/icon-calendar.svg"/>Calendar</p></a>
+                                        <a className="nav-link link-gray collapse-link" href="#"><p><img src="./images/icon-calendar.svg" alt="calendar"/>Calendar</p></a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link link-gray collapse-link" href="#"><p><img src="./images/icon-reminders.svg"/>Reminders</p></a>
+                                        <a className="nav-link link-gray collapse-link" href="#"><p><img src="./images/icon-reminders.svg" alt="reminder"/>Reminders</p></a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link link-gray collapse-link" href="#"><p><img src="./images/icon-planning.svg"/>Planning</p></a>
+                                        <a className="nav-link link-gray collapse-link" href="#"><p><img src="./images/icon-planning.svg" alt="planning"/>Planning</p></a>
                                     </li>
                                 </ul>
                             </div>                       
                         </li>
                         <li className="nav-item">
-                            <button className="btn btn-link nav-link link-gray" data-bs-toggle="collapse" data-bs-target="#company-collapse" onClick={() => handle_img_src("company")}>Company<img src={`./images/icon-arrow-${company_direction}${".svg"}`}/></button>
+                            <button className="btn btn-link nav-link link-gray" data-bs-toggle="collapse" data-bs-target="#company-collapse" onClick={() => handle_img_src("company")}>Company<img src={`./images/icon-arrow-${company_direction}${".svg"}`} alt={`arrow-${company_direction}`}/></button>
                             <div className="collapse" id="company-collapse">
                                 <ul className="nav d-flex flex-column">
                                     <li className="nav-item">
@@ -216,6 +217,8 @@ function Navbar() {
             </div>
         </header>
     )
+
+    /* eslint-enable jsx-a11y/anchor-is-valid */
 }
 
 export default Navbar
