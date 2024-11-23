@@ -36,7 +36,6 @@ function Navbar() {
         }
     }
 
-/* eslint-disable-next-line react-hooks/exhaustive-deps */
     useEffect(()=> {
         window.addEventListener("click", (event) => {
             if(event.target.id){
@@ -55,7 +54,8 @@ function Navbar() {
             }
             handle_img_src("reset")
         })
-    },[handle_img_src])
+// eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
 
     /* eslint-disable jsx-a11y/anchor-is-valid */
     return(
